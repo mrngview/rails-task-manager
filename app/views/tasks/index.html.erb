@@ -1,8 +1,14 @@
 <h1>Tasks#index</h1>
 <p>In this page you can see all the tasks</p>
+<p><%= link_to "Create a new task", new_task_path %></p>
 
 <% @tasks.each_with_index do |task, index| %>
   <h3><%= index+1%>.</h3>
   <p>Name: <%= task.name %></p>
   <p>Description: <%= task.description %></p>
+  <p><%= link_to "See task", task_path(task) %></p>
+  <p><%= link_to "Edit", edit_task_path(task) %></p>
+  <p><%= link_to "Delete", task_path(task),
+  method: :delete, data: { confirm: "Are you sure?" } %></p>
 <% end %>
+
