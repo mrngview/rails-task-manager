@@ -2,7 +2,7 @@
 <p>In this page you can see all the tasks</p>
 
 <% @tasks.each_with_index do |task, index| %>
-  <h3>Task nº<%= index+1%></h3>
+  <h3><%= index+1%>.</h3>
   <p>Name: <%= task.name %></p>
   <p>Description: <%= task.description %></p>
 <% end %>
